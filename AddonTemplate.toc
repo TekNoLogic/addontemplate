@@ -1,0 +1,23 @@
+## Interface: 20400
+
+## Title: Addon Template
+## Notes: Template for creating new addons
+## Author: Tekkub Stoutwrithe
+## Version: Alpha
+## X-Website: http://www.tekkub.net/
+## X-Email: tekkub-wow@googlegroups.com
+## X-Category: Misc
+
+## SavedVariables: AddonTemplateDB
+## SavedVariablesPerCharacter: AddonTemplateDBPC
+
+## OptionalDeps: tekDebug
+
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
+## X-LoadOn-Slash: /addontemplate
+
+LibStub.lua
+tekKonfigAboutPanel.lua
+
+AddonTemplate.lua
