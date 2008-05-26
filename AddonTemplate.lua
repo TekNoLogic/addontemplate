@@ -35,8 +35,8 @@ function f:ADDON_LOADED(event, addon)
 
 	LibStub("tekKonfig-AboutPanel").new("AddonTemplate", "AddonTemplate") -- Remove first arg if no parent config panel
 
-	f:UnregisterEvent("ADDON_LOADED")
-	f.ADDON_LOADED = nil
+	self:UnregisterEvent("ADDON_LOADED")
+	self.ADDON_LOADED = nil
 
 	if IsLoggedIn() then self:PLAYER_LOGIN() else self:RegisterEvent("PLAYER_LOGIN") end
 end
