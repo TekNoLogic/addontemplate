@@ -1,4 +1,11 @@
 
+----------------------
+--      Locals      --
+----------------------
+
+local defaults, defaultsPC, db, dbpc = {}, {}
+
+
 ------------------------------
 --      Util Functions      --
 ------------------------------
@@ -21,8 +28,8 @@ f:RegisterEvent("ADDON_LOADED")
 function f:ADDON_LOADED(event, addon)
 	if addon ~= "AddonTemplate" then return end
 
-	AddonTemplateDB = AddonTemplateDB or {}
-	AddonTemplateDBPC = AddonTemplateDBPC or {}
+	AddonTemplateDB, AddonTemplateDBPC = setmetatable(AddonTemplateDB or {}, {__index = defaults}), setmetatable(AddonTemplateDBPC or {}, {__index = defaultsPC})
+	db, dbpc = AddonTemplateDB, AddonTemplateDBPC
 
 	-- Do anything you need to do after addon has loaded
 
@@ -46,6 +53,9 @@ end
 
 
 function f:PLAYER_LOGOUT()
+	for i,v in pairs(defaults) do if db[i] == v then db[i] = nil end end
+	for i,v in pairs(defaultsPC) do if dbpc[i] == v then dbpc[i] = nil end end
+
 	-- Do anything you need to do as the player logs out
 end
 
