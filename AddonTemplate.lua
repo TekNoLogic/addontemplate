@@ -3,6 +3,7 @@
 --      Locals      --
 ----------------------
 
+local L = setmetatable({}, {__index=function(t,i) return i end})
 local defaults, defaultsPC, db, dbpc = {}, {}
 
 
