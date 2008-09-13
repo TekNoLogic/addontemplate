@@ -14,7 +14,7 @@ local defaults, defaultsPC, db, dbpc = {}, {}
 local function Print(...) ChatFrame1:AddMessage(string.join(" ", "|cFF33FF99Addon Template|r:", ...)) end
 
 local debugf = tekDebug and tekDebug:GetFrame("AddonTemplate")
-local function Debug(...) if debugf then debugf:AddMessage(string.join(", ", ...)) end end
+local function Debug(...) if debugf then debugf:AddMessage(string.join(", ", tostringall(...))) end end
 
 
 -----------------------------
