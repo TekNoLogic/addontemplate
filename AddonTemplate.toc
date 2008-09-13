@@ -11,7 +11,7 @@
 ## SavedVariables: AddonTemplateDB
 ## SavedVariablesPerCharacter: AddonTemplateDBPC
 
-## OptionalDeps: tekDebug
+## OptionalDeps: tekDebug, tekErr
 
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Always: delayed
