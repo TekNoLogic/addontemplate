@@ -34,7 +34,7 @@ function f:ADDON_LOADED(event, addon)
 
 	-- Do anything you need to do after addon has loaded
 
-	LibStub("tekKonfig-AboutPanel").new("AddonTemplate", "AddonTemplate") -- Remove first arg if no parent config panel
+	LibStub("tekKonfig-AboutPanel").new("AddonTemplate", "AddonTemplate") -- Make first arg nil if no parent config panel
 
 	self:UnregisterEvent("ADDON_LOADED")
 	self.ADDON_LOADED = nil
