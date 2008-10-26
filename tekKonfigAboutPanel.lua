@@ -1,10 +1,10 @@
 
-local lib, oldminor = LibStub:NewLibrary("tekKonfig-AboutPanel", 3)
+local lib, oldminor = LibStub:NewLibrary("tekKonfig-AboutPanel", 5)
 if not lib then return end
 
 
 function lib.new(parent, addonname)
-	local frame = CreateFrame("Frame", nil, UIParent)
+	local frame = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer)
 	frame.name, frame.parent, frame.addonname = parent and "About" or addonname, parent, addonname
 	frame:Hide()
 	frame:SetScript("OnShow", lib.OnShow)
@@ -110,4 +110,6 @@ function lib.OnShow(frame)
 			anchor = title
 		end
 	end
+
+	frame:SetScript("OnShow", nil)
 end
