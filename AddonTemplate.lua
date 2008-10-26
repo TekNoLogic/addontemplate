@@ -27,7 +27,7 @@ f:RegisterEvent("ADDON_LOADED")
 
 
 function f:ADDON_LOADED(event, addon)
-	if addon ~= "AddonTemplate" then return end
+	if addon:lower() ~= "addontemplate" then return end
 
 	AddonTemplateDB, AddonTemplateDBPC = setmetatable(AddonTemplateDB or {}, {__index = defaults}), setmetatable(AddonTemplateDBPC or {}, {__index = defaultsPC})
 	db, dbpc = AddonTemplateDB, AddonTemplateDBPC
