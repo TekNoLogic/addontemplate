@@ -1,10 +1,10 @@
-## Interface: 30000
+## Interface: 30100
 
 ## Title: Addon Template
 ## Notes: Template for creating new addons
 ## Author: Tekkub Stoutwrithe
 ## Version: Alpha
-## X-Website: http://www.tekkub.net/
+## X-Website: http://tekkub.net/
 ## X-Email: tekkub-wow@googlegroups.com
 ## X-Category: Misc
 
