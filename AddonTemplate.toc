@@ -21,6 +21,7 @@ LibStub.lua
 tekKonfigAboutPanel.lua
 
 Locale.lua
+Database.lua
 Slashcommand.lua
 UtilityFunctions.lua
 

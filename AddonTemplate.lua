@@ -1,12 +1,6 @@
 
 local myname, ns = ...
 
-----------------------
---      Locals      --
-----------------------
-
-local defaults, defaultsPC, db, dbpc = {}, {}
-
 
 -----------------------------
 --      Event Handler      --
@@ -19,9 +13,7 @@ f:RegisterEvent("ADDON_LOADED")
 
 function f:ADDON_LOADED(event, addon)
 	if addon ~= myname then return end
-
-	AddonTemplateDB, AddonTemplateDBPC = setmetatable(AddonTemplateDB or {}, {__index = defaults}), setmetatable(AddonTemplateDBPC or {}, {__index = defaultsPC})
-	db, dbpc = AddonTemplateDB, AddonTemplateDBPC
+	ns.InitDB()
 
 	-- Do anything you need to do after addon has loaded
 
@@ -45,8 +37,6 @@ end
 
 
 function f:PLAYER_LOGOUT()
-	for i,v in pairs(defaults) do if db[i] == v then db[i] = nil end end
-	for i,v in pairs(defaultsPC) do if dbpc[i] == v then dbpc[i] = nil end end
-
+	ns.FlushDB()
 	-- Do anything you need to do as the player logs out
 end
