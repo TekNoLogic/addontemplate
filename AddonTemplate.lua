@@ -61,13 +61,3 @@ function f:PLAYER_LOGOUT()
 
 	-- Do anything you need to do as the player logs out
 end
-
-
------------------------------
---      Slash Handler      --
------------------------------
-
-_G["SLASH_".. myname:upper().."1" = GetAddOnMetadata(myname, "X-LoadOn-Slash")
-SlashCmdList[myname:upper()] = function(msg)
-	-- Do crap here
-end

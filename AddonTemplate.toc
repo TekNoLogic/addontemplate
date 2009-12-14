@@ -21,4 +21,5 @@ LibStub.lua
 tekKonfigAboutPanel.lua
 
 Locale.lua
+Slashcommand.lua
 AddonTemplate.lua
