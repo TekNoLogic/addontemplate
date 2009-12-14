@@ -20,4 +20,5 @@
 LibStub.lua
 tekKonfigAboutPanel.lua
 
+Locale.lua
 AddonTemplate.lua
