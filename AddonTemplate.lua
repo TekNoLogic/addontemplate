@@ -8,17 +8,6 @@ local myname, ns = ...
 local defaults, defaultsPC, db, dbpc = {}, {}
 
 
-------------------------------
---      Util Functions      --
-------------------------------
-
-local myfullname = GetAddOnMetadata(myname, "Title")
-local function Print(...) print("|cFF33FF99".. myfullname.. "|r:", ...) end
-
-local debugf = tekDebug and tekDebug:GetFrame(myname)
-local function Debug(...) if debugf then debugf:AddMessage(string.join(", ", tostringall(...))) end end
-
-
 -----------------------------
 --      Event Handler      --
 -----------------------------

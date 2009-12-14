@@ -22,4 +22,6 @@ tekKonfigAboutPanel.lua
 
 Locale.lua
 Slashcommand.lua
+UtilityFunctions.lua
+
 AddonTemplate.lua
