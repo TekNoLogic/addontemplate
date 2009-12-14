@@ -12,9 +12,10 @@ local defaults, defaultsPC, db, dbpc = {}, {}
 --      Util Functions      --
 ------------------------------
 
-local function Print(...) print("|cFF33FF99Addon Template|r:", ...) end
+local myfullname = GetAddOnMetadata(myname, "Title")
+local function Print(...) print("|cFF33FF99".. myfullname.. "|r:", ...) end
 
-local debugf = tekDebug and tekDebug:GetFrame("AddonTemplate")
+local debugf = tekDebug and tekDebug:GetFrame(myname)
 local function Debug(...) if debugf then debugf:AddMessage(string.join(", ", tostringall(...))) end end
 
 
@@ -28,14 +29,14 @@ f:RegisterEvent("ADDON_LOADED")
 
 
 function f:ADDON_LOADED(event, addon)
-	if addon:lower() ~= "addontemplate" then return end
+	if addon ~= myname then return end
 
 	AddonTemplateDB, AddonTemplateDBPC = setmetatable(AddonTemplateDB or {}, {__index = defaults}), setmetatable(AddonTemplateDBPC or {}, {__index = defaultsPC})
 	db, dbpc = AddonTemplateDB, AddonTemplateDBPC
 
 	-- Do anything you need to do after addon has loaded
 
-	LibStub("tekKonfig-AboutPanel").new("AddonTemplate", "AddonTemplate") -- Make first arg nil if no parent config panel
+	LibStub("tekKonfig-AboutPanel").new(myfullname, myname) -- Make first arg nil if no parent config panel
 
 	self:UnregisterEvent("ADDON_LOADED")
 	self.ADDON_LOADED = nil
@@ -66,7 +67,7 @@ end
 --      Slash Handler      --
 -----------------------------
 
-SLASH_ADDONTEMPLATE1 = "/addontemplate"
-SlashCmdList.ADDONTEMPLATE = function(msg)
+_G["SLASH_".. myname:upper().."1" = GetAddOnMetadata(myname, "X-LoadOn-Slash")
+SlashCmdList[myname:upper()] = function(msg)
 	-- Do crap here
 end
