@@ -2,18 +2,10 @@
 local myname, ns = ...
 
 
------------------------------
---      Event Handler      --
------------------------------
-
-local f = CreateFrame("frame")
-f:SetScript("OnEvent", function(self, event, ...) if self[event] then return self[event](self, event, ...) end end)
-f:RegisterEvent("ADDON_LOADED")
-
-
-function f:ADDON_LOADED(event, addon)
+ns:RegisterEvent("ADDON_LOADED")
+function ns:ADDON_LOADED(event, addon)
 	if addon ~= myname then return end
-	ns.InitDB()
+	self:InitDB()
 
 	-- Do anything you need to do after addon has loaded
 
@@ -26,7 +18,7 @@ function f:ADDON_LOADED(event, addon)
 end
 
 
-function f:PLAYER_LOGIN()
+function ns:PLAYER_LOGIN()
 	self:RegisterEvent("PLAYER_LOGOUT")
 
 	-- Do anything you need to do after the player has entered the world
@@ -36,7 +28,7 @@ function f:PLAYER_LOGIN()
 end
 
 
-function f:PLAYER_LOGOUT()
-	ns.FlushDB()
+function ns:PLAYER_LOGOUT()
+	self:FlushDB()
 	-- Do anything you need to do as the player logs out
 end

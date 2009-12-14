@@ -24,5 +24,6 @@ Locale.lua
 Database.lua
 Slashcommand.lua
 UtilityFunctions.lua
+EventDispatcher.lua
 
 AddonTemplate.lua
